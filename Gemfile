@@ -12,3 +12,5 @@ end
 gem 'jquery-rails'
 gem 'rails_admin'
 gem 'devise'
+gem 'slim'
+gem 'slim-rails'
