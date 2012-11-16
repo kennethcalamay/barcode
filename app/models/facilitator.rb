@@ -3,4 +3,8 @@ class Facilitator < ActiveRecord::Base
 
   has_many :students
   accepts_nested_attributes_for :students
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

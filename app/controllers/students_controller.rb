@@ -5,9 +5,6 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.where(:barcode => params[:id])
-    puts "*"*100
-    puts @student.inspect
-    puts "*"*100
 
     if @student.empty?
       @student = Student.create!(:barcode => params[:id])
