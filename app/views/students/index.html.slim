@@ -1,30 +1,11 @@
 div style="float:left;"
   h1 Statistics
   
-  h3 Year
-  p
-    strong Freshmen: 
-    span.first 5
-  p
-    strong Sophomores: 
-    span.second 5
-  p
-    strong Juniors: 
-    span.third 5
-  p
-    strong Seniors: 
-    span.fourth 5
-  p
-    strong Unknown: 
-    span.unknown 5
+  h4 By year level
+  = render 'year_stats'
 
-  h3 Gender
-  p
-    strong Male: 
-    span.male
-  p
-    strong Female: 
-    span.female
+  h4 By gender
+  = render 'gender_stats'
 
   /h3 Course
 
@@ -33,10 +14,7 @@ div style="margin-left: 100px; float:left; clear: right;"
   .students
     = render @students
 
-div style="margin-left: 100px; float:left; clear: right;"
-  h1 Facilitator
+div#facilitators style="margin-left: 100px; float:left; clear: right;"
+  h1 Availability
+  = render 'availability', facilitators: @facilitators
 
-  - Facilitator.all.each do |f|
-    p
-      strong #{f.name}:
-      span id="#{f.name}"

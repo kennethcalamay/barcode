@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   def index
     @students = Registration.registered_students
+    @facilitators = Facilitator.all
   end
 
   def show

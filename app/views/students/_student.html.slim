@@ -1,5 +1,6 @@
 - s = student
-blockquote class="gender#{s.gender} year#{s.year}" style="display: block; clear: both;"
+- f = s.facilitator
+blockquote class="gender#{s.gender} year#{s.year} faci#{f.try(:id)}" style="display: block; clear: both;"
   p
     strong #{s.first_name} #{s.last_name}
     ', 
@@ -11,7 +12,7 @@ blockquote class="gender#{s.gender} year#{s.year}" style="display: block; clear:
 
   small
     em Facilitator: 
-    span style="color:#{s.facilitator.try(:color)};" #{s.facilitator.try(:name)}
+    span style="color:#{s.facilitator.try(:color)};" #{f.try(:name)}
     ', &nbsp;&nbsp;
     em Barcode: 
     ' #{s.barcode}

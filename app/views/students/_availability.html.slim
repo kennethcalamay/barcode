@@ -1,0 +1,10 @@
+table.table.table-bordered
+  thead
+    tr
+      th Facilitator
+      th Students
+  tbody
+    - facilitators.each do |f|
+      tr id="faci#{f.id}"
+        td = f.name
+        td.value 0

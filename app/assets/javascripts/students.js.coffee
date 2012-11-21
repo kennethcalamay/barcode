@@ -10,8 +10,17 @@ $(document).ready ->
     $(".fourth").html( $('blockquote.year4').length )
     $(".unknown").html( $('blockquote.year').length )
 
+  updateFacilitatorStats = ->
+    facilitators = $("#facilitators tbody").children("tr")
+    $.each(facilitators, (index, value)->
+      $("#"+value.id+" td.value").html(
+        $('blockquote.'+value.id).length
+      )
+    )
+
   updateGenderStats()
   updateYearStats()
+  updateFacilitatorStats()
 
   myVar = ''
 
@@ -32,6 +41,7 @@ $(document).ready ->
         $('.students').prepend(data)
         updateGenderStats()
         updateYearStats()
+        updateFacilitatorStats()
 
         #$("html, body").animate({scrollTop: $(document).height(), 1000 });
         myVar = ''
