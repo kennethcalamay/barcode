@@ -6,6 +6,3 @@ html {
   background-size: cover;
 }
 
-body{background:transparent;}
-tr:nth-child(odd) {background: transparent;}
-tr:nth-child(even) {background: transparent;}
