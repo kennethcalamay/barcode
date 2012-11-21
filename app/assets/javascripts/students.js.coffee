@@ -15,8 +15,8 @@ $(document).ready ->
 
       success_callback = (data)->
         $('#error').remove()
-        $('tbody').append(data)
-        $("html, body").animate({scrollTop: $(document).height(), 1000 });
+        $('.students').prepend(data)
+        #$("html, body").animate({scrollTop: $(document).height(), 1000 });
         myVar = ''
 
       $.get(url).

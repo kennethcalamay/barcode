@@ -1,12 +1,19 @@
 h1 Students
-table.table.table-striped.table-bordered
-  tbody
-    tr
-      th First Name
-      th Last Name
-      th Gender
-      th Year
-      th Course
-      th Barcode
-      th Facilitator
-    = render @students
+.students
+  - @students.each do |s|
+    blockquote style="display: block; clear: both;"
+      p
+        strong #{s.first_name} #{s.last_name}
+        ', 
+        '#{s.gender == 'M' ? "Male" : "Female"}
+        ', 
+        - if s.year.present?
+          '#{s.year.to_i.ordinalize} year
+        = s.course
+  
+      small
+        em Facilitator: 
+        span style="color:#{s.facilitator.try(:color)};" #{s.facilitator.try(:name)}
+        ', &nbsp;&nbsp;&nbsp;
+        em Barcode:
+        ' #{s.barcode}
