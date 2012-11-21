@@ -1,19 +1,42 @@
-h1 Students
-.students
-  - @students.each do |s|
-    blockquote style="display: block; clear: both;"
-      p
-        strong #{s.first_name} #{s.last_name}
-        ', 
-        '#{s.gender == 'M' ? "Male" : "Female"}
-        ', 
-        - if s.year.present?
-          '#{s.year.to_i.ordinalize} year
-        = s.course
+div style="float:left;"
+  h1 Statistics
   
-      small
-        em Facilitator: 
-        span style="color:#{s.facilitator.try(:color)};" #{s.facilitator.try(:name)}
-        ', &nbsp;&nbsp;&nbsp;
-        em Barcode:
-        ' #{s.barcode}
+  h3 Year
+  p
+    strong Freshmen: 
+    span.first 5
+  p
+    strong Sophomores: 
+    span.second 5
+  p
+    strong Juniors: 
+    span.third 5
+  p
+    strong Seniors: 
+    span.fourth 5
+  p
+    strong Unknown: 
+    span.unknown 5
+
+  h3 Gender
+  p
+    strong Male: 
+    span.male
+  p
+    strong Female: 
+    span.female
+
+  /h3 Course
+
+div style="margin-left: 100px; float:left; clear: right;"
+  h1 Student Registration
+  .students
+    = render @students
+
+div style="margin-left: 100px; float:left; clear: right;"
+  h1 Facilitator
+
+  - Facilitator.all.each do |f|
+    p
+      strong #{f.name}:
+      span id="#{f.name}"

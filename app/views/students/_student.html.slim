@@ -1,5 +1,5 @@
 - s = student
-blockquote style="display: block; clear: both;"
+blockquote class="gender#{s.gender} year#{s.year}" style="display: block; clear: both;"
   p
     strong #{s.first_name} #{s.last_name}
     ', 
@@ -17,5 +17,5 @@ blockquote style="display: block; clear: both;"
     ' #{s.barcode}
     ', &nbsp;&nbsp;
     em Time in: &nbsp;
-    ' #{s.registrations.last.created_at.strftime("%l:%M %P")}
+    ' #{s.registrations.last.created_at.in_time_zone('Singapore').strftime("%l:%M %P")}
 

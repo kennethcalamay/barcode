@@ -1,4 +1,18 @@
 $(document).ready ->
+  updateGenderStats = ->
+    $(".male").html( $('blockquote.genderM').length )
+    $(".female").html( $('blockquote.genderF').length )
+
+  updateYearStats = ->
+    $(".first").html( $('blockquote.year1').length )
+    $(".second").html( $('blockquote.year2').length )
+    $(".third").html( $('blockquote.year3').length )
+    $(".fourth").html( $('blockquote.year4').length )
+    $(".unknown").html( $('blockquote.year').length )
+
+  updateGenderStats()
+  updateYearStats()
+
   myVar = ''
 
   $(document).keypress (e)->
@@ -16,6 +30,9 @@ $(document).ready ->
       success_callback = (data)->
         $('#error').remove()
         $('.students').prepend(data)
+        updateGenderStats()
+        updateYearStats()
+
         #$("html, body").animate({scrollTop: $(document).height(), 1000 });
         myVar = ''
 
