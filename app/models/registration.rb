@@ -3,7 +3,8 @@ class Registration < ActiveRecord::Base
   attr_accessible :student_id
 
   def self.registered_students
-    where('created_at >= ?', Time.now.beginning_of_day).order('id desc').map do |r|
+    all.map do |r|
+    #where('created_at >= ?', Time.now.beginning_of_day).order('id desc').map do |r|
       r.student
     end
   end

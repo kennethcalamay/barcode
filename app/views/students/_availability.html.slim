@@ -2,9 +2,14 @@ table.table.table-bordered
   thead
     tr
       th Facilitator
-      th Students
+      th #
   tbody
     - facilitators.each do |f|
       tr id="faci#{f.id}"
-        td = f.name
-        td.value 0
+        td
+          small
+            = f.name
+            '&nbsp;
+          small style="color: #{f.color}" #{f.color.capitalize}
+        - color = f.gender == 'M' ? 'mediumblue' : 'deeppink'
+        td.value style="color: #{color};" 0
