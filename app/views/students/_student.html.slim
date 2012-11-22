@@ -11,8 +11,7 @@ blockquote class="gender#{s.gender} year#{s.year} faci#{f.try(:id)}" style="disp
     = s.course
 
   small
-    em Facilitator: 
-    span style="color:#{s.facilitator.try(:color)};" #{f.try(:name)}
+    strong style="color:#{s.facilitator.try(:color)};" #{f.try(:name)}
     ', &nbsp;&nbsp;
     em Barcode: 
     ' #{s.barcode}

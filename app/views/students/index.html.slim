@@ -1,4 +1,4 @@
-div style="float:left;"
+div style="float:left; margin-right: 80px;"
   h1 Statistics
   
   h4 By year level
@@ -9,12 +9,12 @@ div style="float:left;"
 
   /h3 Course
 
-div style="margin-left: 100px; float:left; clear: right;"
+div style="float:left; margin-right: 50px;"
   h1 Student Registration
   .students
     = render @students
 
-div#facilitators style="margin-left: 100px; float:left; clear: right;"
+div#facilitators style="float:left;"
   h1 Availability
   = render 'availability', facilitators: @facilitators
 
