@@ -1,21 +1,23 @@
 - s = student
 - f = s.facilitator
+
 blockquote class="gender#{s.gender} year#{s.year} faci#{f.try(:id)}" style="display: block; clear: both;"
   p
-    strong #{s.first_name} #{s.last_name}
-    ', 
-    = s.gender == 'M' ? "Male" : "Female"
-    ', 
-    - if s.year.present?
-      '#{s.year.to_i.ordinalize} year
-    = s.course
+    strong #{s.first_name} #{s.last_name} 
+    span style="font-size: smaller;"
+      em
+        - if s.gender == 'M'
+          ' Male
+        - elsif s.gender == 'F'
+          ' Female
+      - if s.year.present?
+        ' #{s.year.to_i.ordinalize} year
+      = s.course
 
   small
-    strong style="color:#{s.facilitator.try(:color)};" #{f.try(:name)}
-    ', &nbsp;&nbsp;
-    em Barcode: 
-    ' #{s.barcode}
-    ', &nbsp;&nbsp;
-    em Time in: &nbsp;
+    strong style="color:#{s.facilitator.try(:color)};" #{f.try(:name)} 
+    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    | #{s.barcode}
+    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     ' #{s.registrations.last.created_at.in_time_zone('Singapore').strftime("%l:%M %P")}
 

@@ -7,7 +7,7 @@ $(document).ready ->
   
     while i < len
       row = tbl.rows[i]
-      sortnr = parseFloat(row.cells[1].textContent or row.cells[1].innerText)
+      sortnr = parseFloat(row.cells[0].textContent or row.cells[0].innerText)
       store.push [sortnr, row]  unless isNaN(sortnr)
       i++
 
