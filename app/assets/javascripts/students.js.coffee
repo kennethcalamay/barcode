@@ -1,4 +1,27 @@
 $(document).ready ->
+  sortTable = ->
+    tbl = $("#facilitators table").children()[1]
+    store = []
+    i = 0
+    len = tbl.rows.length
+  
+    while i < len
+      row = tbl.rows[i]
+      sortnr = parseFloat(row.cells[1].textContent or row.cells[1].innerText)
+      store.push [sortnr, row]  unless isNaN(sortnr)
+      i++
+
+    store.sort (x, y) ->
+      x[0] - y[0]
+  
+    i = 0
+    len = store.length
+  
+    while i < len
+      tbl.appendChild store[i][1]
+      i++
+    store = null
+
   updateGenderStats = ->
     $(".male").html( $('blockquote.genderM').length )
     $(".female").html( $('blockquote.genderF').length )
@@ -17,6 +40,7 @@ $(document).ready ->
         $('blockquote.'+value.id).length
       )
     )
+    sortTable()
 
   updateGenderStats()
   updateYearStats()
