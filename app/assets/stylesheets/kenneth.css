@@ -1,3 +1,7 @@
-td{
+.table th{
+  text-align: center;
+}
+
+#facilitators .table td:first-child{
   text-align: center;
 }

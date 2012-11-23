@@ -1,7 +1,7 @@
 table.table.table-striped.table-hover.table-bordered
   thead
     tr
-      th #
+      th M/F #
       th Override
       th Color
       th Facilitator
@@ -10,10 +10,10 @@ table.table.table-striped.table-hover.table-bordered
       tr id="faci#{f.id}"
         - color = f.gender == 'M' ? 'blue' : 'deeppink'
         td.value style="color: #{color};" 0
-        th
-          button.badge.badge-important -
+        td
+          button.minus -
           | &nbsp;
-          button.badge.badge-success +
+          button.plus +
         td
           small = f.color.capitalize
         td

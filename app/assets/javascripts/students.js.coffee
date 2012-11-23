@@ -1,26 +1,4 @@
 $(document).ready ->
-  sortTable = ->
-    tbl = $("#facilitators table").children()[1]
-    store = []
-    i = 0
-    len = tbl.rows.length
-  
-    while i < len
-      row = tbl.rows[i]
-      sortnr = parseFloat(row.cells[0].textContent or row.cells[0].innerText)
-      store.push [sortnr, row]  unless isNaN(sortnr)
-      i++
-
-    store.sort (x, y) ->
-      x[0] - y[0]
-  
-    i = 0
-    len = store.length
-  
-    while i < len
-      tbl.appendChild store[i][1]
-      i++
-    store = null
 
   updateGenderStats = ->
     $(".male").html( $('blockquote.genderM').length )
@@ -75,3 +53,5 @@ $(document).ready ->
         error(fail_callback)
     else
       myVar += String.fromCharCode(e.which)
+
+
