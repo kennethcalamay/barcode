@@ -1,5 +1,5 @@
-div style="float:left; margin-right: 80px;"
-  h1 Statistics
+div#statistics style="float:left; margin-right: 80px;"
+  h2 Statistics
   
   h4 By year level
   = render 'year_stats'
@@ -7,14 +7,14 @@ div style="float:left; margin-right: 80px;"
   h4 By gender
   = render 'gender_stats'
 
-  /h3 Course
+  h4 By course
 
-div style="float:left; margin-right: 50px;"
-  h1 Student Registration
+div#students style="float:left; margin-right: 50px;"
+  h2 Student Registration
   .students
     = render @students
 
 div#facilitators style="float:left;"
-  h1 Availability
+  h2 Facilitator Availability
   = render 'availability', facilitators: @facilitators
 
