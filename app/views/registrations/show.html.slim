@@ -4,8 +4,7 @@ table.table.table-hover.table-striped.table-bordered
       th Name
       th Faci
     tbody
-      - @registrations.each do |r|
-        - s = r.student
+      - @students.each do |s|
         tr
           td =s.name
           td =s.facilitator.try(:name)
