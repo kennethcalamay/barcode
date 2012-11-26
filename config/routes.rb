@@ -3,6 +3,7 @@ NewBarcode::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :students
+  resources :registrations
 
   root :to => "students#index"
 end
