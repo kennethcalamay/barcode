@@ -1,20 +1,23 @@
-div#statistics style="float:left; margin-right: 80px;"
-  h2 Statistics
+.row
+  #statistics.span2
+    h2 Statistics
+    
+    h4 By year level
+    = render 'year_stats'
   
-  h4 By year level
-  = render 'year_stats'
+    h4 By gender
+    = render 'gender_stats'
+  
+    h4 By course
 
-  h4 By gender
-  = render 'gender_stats'
+  #students.span7
+    h2 Student Registration
+    .students
+      = render @students
 
-  h4 By course
-
-div#students style="float:left; margin-right: 50px;"
-  h2 Student Registration
-  .students
-    = render @students
-
-div#facilitators style="float:left;"
-  h2 Facilitator Availability
-  = render 'availability', facilitators: @facilitators
-
+  #facilitators.span3
+    h2 Available Faci
+    = render 'availability', facilitators: @facilitators
+  
+  
+  

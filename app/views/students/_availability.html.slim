@@ -1,7 +1,7 @@
 table.table.table-striped.table-hover.table-bordered
   thead
     tr
-      th M/F #
+      th #
       th Override
       th Color
       th Facilitator
@@ -10,7 +10,7 @@ table.table.table-striped.table-hover.table-bordered
       tr id="faci#{f.id}"
         - color = f.gender == 'M' ? 'blue' : 'deeppink'
         td.value style="color: #{color};" 0
-        td
+        td style="width: 60px;"
           button.minus -
           | &nbsp;
           button.plus +
